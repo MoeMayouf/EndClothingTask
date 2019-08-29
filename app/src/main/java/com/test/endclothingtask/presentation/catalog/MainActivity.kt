@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity(), CatalogPresenter.CatalogView, Activity
         //tvInfo.text = catalog.products[0].name
         adapter = CatalogAdapter(catalog)
         recyclerViewCatalog.adapter = adapter
+        tvProductsAmount.text = "${catalog.product_count} items"
     }
 
     override fun showError(message: String?) {
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity(), CatalogPresenter.CatalogView, Activity
 
         component.inject(this)
         catalogPresenter.onViewAttached(this)
+
     }
 
     override fun onDestroy() {
