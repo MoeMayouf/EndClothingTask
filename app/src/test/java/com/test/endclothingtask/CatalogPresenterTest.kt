@@ -29,6 +29,7 @@ class CatalogPresenterTest {
 
     @Test
     fun `check presenter is being attached`() {
+        sut.onViewAttached(view)
         assert(sut.view != null)
     }
 
